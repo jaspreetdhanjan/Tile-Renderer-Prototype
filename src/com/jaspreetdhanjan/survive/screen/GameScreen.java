@@ -8,7 +8,7 @@ import com.jaspreetdhanjan.survive.level.Level;
 import com.jaspreetdhanjan.vecmath.Mat4;
 
 public class GameScreen extends Screen {
-	private Level level = new Level(8, 8);
+	private Level level = new Level(64, 64);
 	private float moveSpeed = 8;
 	private float xOffset, yOffset;
 

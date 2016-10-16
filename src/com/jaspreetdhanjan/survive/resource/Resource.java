@@ -3,10 +3,6 @@ package com.jaspreetdhanjan.survive.resource;
 import com.jaspreetdhanjan.survive.ResourceLoader;
 
 public abstract class Resource {
-	public enum ResourceType {
-		Shader, Texture;
-	}
-
 	private final ResourceType type;
 
 	public Resource(ResourceType type) {

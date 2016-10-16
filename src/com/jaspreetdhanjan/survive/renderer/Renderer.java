@@ -34,6 +34,9 @@ public class Renderer {
 	}
 
 	private void drawPerMesh(Mesh mesh, Mat4 modelViewMatrix) {
+		// Mat4 translatedMatrix = mesh.getTranslation().mul(modelViewMatrix);
+		// shader.setUniformMat4("modelViewMatrix", translationMatrix);
+
 		shader.setUniformMat4("modelViewMatrix", modelViewMatrix);
 		mesh.render(shader);
 	}

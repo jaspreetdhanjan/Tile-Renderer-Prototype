@@ -32,29 +32,28 @@ public class ResourceLoader {
 	}
 
 	private static Shader loadShader(String filename) {
-		try {
-			String[] sources = new String[2];
-			String[] ext = { ".vs", ".fs" };
+		String[] sources = new String[2];
+		String[] ext = { ".vs", ".fs" };
 
-			for (int i = 0; i < sources.length; i++) {
-				String src = "";
-				String name = "/shaders/" + filename + ext[i];
+		for (int i = 0; i < sources.length; i++) {
+			String src = "";
+			String name = "/shaders/" + filename + ext[i];
 
+			try {
 				BufferedReader reader = new BufferedReader(new InputStreamReader(ResourceLoader.class.getResourceAsStream(name)));
 				String line;
 				while ((line = reader.readLine()) != null) {
 					src += line + "\n";
 				}
 				reader.close();
-
-				sources[i] = src;
+			} catch (IOException e) {
+				ExceptionLogger.log("ResourceManager.loadShader()", e);
 			}
-			return new Shader(sources[0], sources[1]);
-		} catch (IOException e) {
-			ExceptionLogger.log("ResourceManager.loadShader()", e);
+
+			sources[i] = src;
 		}
 
-		return null;
+		return new Shader(sources[0], sources[1]);
 	}
 
 	public static void add(Resource resource) {
@@ -64,7 +63,7 @@ public class ResourceLoader {
 	public static void loadAll(boolean verbose) {
 		for (Resource resource : resources) {
 			if (!resource.load()) {
-				System.out.println("Failed to load " + resource);
+				System.err.println("Failed to load " + resource);
 				continue;
 			}
 		}

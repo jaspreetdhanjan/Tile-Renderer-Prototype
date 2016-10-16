@@ -13,7 +13,7 @@ import com.jaspreetdhanjan.survive.renderer.Renderer;
 import com.jaspreetdhanjan.survive.screen.*;
 
 public class Montauk implements Runnable {
-	private static final String TITLE = "Space Survivor";
+	private static final String TITLE = "Level Renderer Test";
 
 	private boolean stop = false;
 	private long lastTime, timer;
