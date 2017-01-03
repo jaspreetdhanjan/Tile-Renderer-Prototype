@@ -5,7 +5,7 @@ package com.jaspreetdhanjan.vecmath;
  *
  * @author Jaspreet Dhanjan
  */
-
+ 
 public class Vec3 {
 	public static final Vec3 X = new Vec3(1f, 0f, 0f);
 	public static final Vec3 Y = new Vec3(0f, 1f, 0f);
