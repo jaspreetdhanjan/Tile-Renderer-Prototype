@@ -4,7 +4,7 @@ package com.jaspreetdhanjan.vecmath;
  * A 3-element vector that is represented by 3 single-precision floating numbers.
  *
  * @author Jaspreet Dhanjan
- */
+ */ 
 
 public class Vec3 {
 	public static final Vec3 X = new Vec3(1f, 0f, 0f);
